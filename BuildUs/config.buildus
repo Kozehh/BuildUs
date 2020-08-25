@@ -1,0 +1,10 @@
+project: appidou
+deps_include:
+ var: BOOST_INCLUDEDIR
+deps_library:
+ var: BOOST_LIBRARYDIR
+ libs:
+ - boost_filesystem
+compile:
+ - hehe: test1.cpp
+ - xd: test2.cpp

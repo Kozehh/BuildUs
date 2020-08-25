@@ -1,0 +1,23 @@
+stages:
+    - build
+    - tests
+
+Building:
+    image: kozehh/lab5
+    stage: build
+    script:
+        - apt-get update
+        - apt install zlib1g-dev && apt install zlib1g
+        - cd /boostinstall/boost_1_73_0 && ./b2 --with-iostreams -a
+        - cd -
+        - cd BuildUs && mkdir build && cd build
+        - cmake .. && make
+    artifacts:
+        paths:
+            - BuildUs/build/tests/buildtests
+Test:
+    image: kozehh/lab5
+    stage: tests
+    script:
+        - cd BuildUs && ./build/tests/buildtests
+

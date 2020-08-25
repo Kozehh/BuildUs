@@ -1,0 +1,4 @@
+BuildUs/build/
+.vscode/
+BuildUs/tmp/
+BuildUs/intermediate/
